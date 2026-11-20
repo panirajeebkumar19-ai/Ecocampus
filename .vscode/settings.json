@@ -1,0 +1,9 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/ecocampus-backend/venv/Scripts/python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/ecocampus-backend"
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/ecocampus-backend"
+  ]
+}

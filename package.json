@@ -1,0 +1,21 @@
+{
+  "name": "ecocampus",
+  "version": "1.0.0",
+  "description": "EcoCampus — Smart Sustainability and Resource Conservation Hub",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "backend": ".\\ecocampus-backend\\venv\\Scripts\\python.exe ecocampus-backend/run.py"
+  },
+  "keywords": [
+    "ecocampus",
+    "sustainability",
+    "frontend-challenge"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "localtunnel": "^2.0.2"
+  }
+}

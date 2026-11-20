@@ -1,0 +1,1063 @@
+/* Global Visible Scrollbar System */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(13, 18, 31, 0.95);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(52, 211, 153, 0.55);
+  border-radius: 9999px;
+  border: 2px solid rgba(13, 18, 31, 0.95);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.9);
+}
+.light ::-webkit-scrollbar-track,
+html.light ::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.95);
+}
+.light ::-webkit-scrollbar-thumb,
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.6);
+  border: 2px solid rgba(241, 245, 249, 0.95);
+}
+
+/* Global Smooth Scrolling & Visible Emerald Scrollbar */
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(52, 211, 153, 0.6) rgba(15, 23, 42, 0.85);
+  overflow-y: auto !important;
+}
+
+/* Deep Obsidian Base Canvas */
+body {
+  margin: 0;
+  background-color: #050811 !important;
+  color: #f8fafc;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+  min-height: 100vh;
+}
+
+/* Micro-dot matrix overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+    /* Make sure the canvas sits on bottom */
+#liveBgCanvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+    html.light body {
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+    }
+    html.light body::before {
+      background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px) !important;
+    }
+    html.light #liveBgCanvas {
+      opacity: 0.85;
+    }
+
+    /* Edolus-Style High-Precision Glass Bento Card */
+.glass-panel {
+  background: rgba(10, 15, 29, 0.68) !important;
+  backdrop-filter: blur(24px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(160%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 
+    0 16px 36px -12px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.10) !important; /* Luminous top rim */
+}
+    .light .glass-panel,
+    html.light .glass-panel {
+      background: rgba(255, 255, 255, 0.92) !important;
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(226, 232, 240, 0.9) !important;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.8) !important;
+    }
+
+    /* Explicit Header Definition & Separation Border */
+    header {
+      border-bottom: 1px solid rgba(51, 65, 85, 0.65) !important;
+      box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.35);
+    }
+    html.light header {
+      border-bottom: 1px solid rgba(226, 232, 240, 0.95) !important;
+      box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Fluid Hover Glow */
+.glass-card-interactive {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+.glass-card-interactive:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(52, 211, 153, 0.35) !important;
+  box-shadow: 
+    0 24px 48px -14px rgba(0, 0, 0, 0.8),
+    0 0 30px -8px rgba(16, 185, 129, 0.18),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.20) !important;
+}
+
+    /* Neon Gradients */
+    .text-gradient-emerald {
+      background: linear-gradient(135deg, #34d399 0%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .text-gradient-amber {
+      background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gemini-gradient-text {
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    /* Radial Ambient Background Glows */
+    .ambient-glow {
+      position: fixed;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 9999px;
+      filter: blur(120px);
+      opacity: 0.15;
+    }
+    .dark .ambient-glow-1 {
+      width: 600px;
+      height: 600px;
+      top: -100px;
+      right: -50px;
+      background: radial-gradient(circle, #059669 0%, transparent 70%);
+    }
+    .dark .ambient-glow-2 {
+      width: 500px;
+      height: 500px;
+      bottom: 50px;
+      left: -100px;
+      background: radial-gradient(circle, #0284c7 0%, transparent 70%);
+    }
+
+    /* Range slider custom styling */
+    input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      background: #1e293b;
+      border-radius: 5px;
+    }
+    .light input[type=range] {
+      background: #e2e8f0;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      background: #10b981;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+      transition: all 0.15s ease-in-out;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+      background: #34d399;
+    }
+
+    /* Confetti Canvas */
+    #confettiCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* =========================================================================
+       LIGHT MODE COMPREHENSIVE THEME SYSTEM (PIXEL-PERFECT CONTRAST & READABILITY)
+       ========================================================================= */
+    /* --- Light Mode Typography & Surface Inversion --- */
+    html.light body {
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px) !important;
+      background-size: 24px 24px !important;
+    }
+
+    /* Sidebar in Light Mode */
+    html.light aside,
+    html.light #appSidebar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-color: #e2e8f0 !important;
+    }
+
+    html.light .ambient-glow {
+      opacity: 0.28 !important;
+    }
+    html.light .ambient-glow-1 {
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%) !important;
+    }
+    html.light .ambient-glow-2 {
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.18) 0%, transparent 70%) !important;
+    }
+
+    /* Glass Panels in Light Mode */
+    html.light .glass-panel,
+    html.light .bg-slate-900\/90,
+    html.light .bg-slate-950\/90 {
+      background: rgba(255, 255, 255, 0.85) !important;
+      border-color: rgba(226, 232, 240, 0.9) !important;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.04) !important;
+    }
+    html.light .glass-card-interactive:hover {
+      border-color: rgba(16, 185, 129, 0.6) !important;
+      box-shadow: 0 12px 28px -6px rgba(16, 185, 129, 0.15), 0 4px 8px -2px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    /* Invert Text Colors in Light Mode */
+    html.light .text-white {
+      color: #0f172a !important;
+    }
+    html.light .text-slate-100 {
+      color: #0f172a !important;
+    }
+    html.light .text-slate-200 {
+      color: #1e293b !important;
+    }
+    html.light .text-slate-300,
+    html.light .text-slate-400 {
+      color: #475569 !important;
+    }
+    html.light .text-slate-500 {
+      color: #64748b !important;
+    }
+
+    /* Rich, readable emerald & cyan in Light Mode */
+    html.light .text-gradient-emerald {
+      background: linear-gradient(135deg, #059669 0%, #0891b2 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+    html.light .text-emerald-400 {
+      color: #047857 !important;
+    }
+    html.light .text-emerald-300 {
+      color: #065f46 !important;
+    }
+    html.light .text-cyan-400 {
+      color: #0891b2 !important;
+    }
+    html.light .text-cyan-300 {
+      color: #0e7490 !important;
+    }
+    html.light .text-amber-400,
+    html.light .text-amber-300 {
+      color: #b45309 !important;
+    }
+    html.light .text-purple-400 {
+      color: #7e22ce !important;
+    }
+
+    /* Container, Sub-card & Border Overrides */
+    html.light .bg-slate-900,
+    html.light .bg-slate-950 {
+      background-color: #f1f5f9 !important;
+      border-color: #e2e8f0 !important;
+    }
+    html.light .bg-slate-900\/60,
+    html.light .bg-slate-900\/70,
+    html.light .bg-slate-900\/80,
+    html.light .bg-slate-900\/90,
+    html.light .bg-slate-950\/60,
+    html.light .bg-slate-950\/70,
+    html.light .bg-slate-950\/80,
+    html.light .bg-slate-950\/90 {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    }
+    html.light .bg-slate-850 {
+      background-color: #f1f5f9 !important;
+    }
+    html.light .border-slate-800,
+    html.light .border-slate-800\/80,
+    html.light .border-slate-700,
+    html.light .border-slate-700\/80 {
+      border-color: #e2e8f0 !important;
+    }
+    html.light .bg-slate-800 {
+      background-color: #e2e8f0 !important;
+    }
+
+    /* Header & Sub-header Dispatch Bar */
+    html.light header {
+      background: rgba(255, 255, 255, 0.96) !important;
+      border-bottom-color: #e2e8f0 !important;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05) !important;
+    }
+    html.light header .bg-slate-900 {
+      background-color: #ffffff !important;
+      border-color: #cbd5e1 !important;
+    }
+    html.light header .bg-slate-900\/60 {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+    }
+    html.light .bg-gradient-to-r.from-slate-900 {
+      background: linear-gradient(to right, #ecfdf5, #f0fdfa, #ecfdf5) !important;
+      border-top-color: #a7f3d0 !important;
+      border-bottom-color: #a7f3d0 !important;
+    }
+
+    /* Fix Live Dispatch Strip in Light Mode */
+    html.light #tickerText,
+    html.light [class*="LIVE DISPATCH"] {
+      color: #047857 !important;
+    }
+
+    /* Badges & Accent Pills */
+    html.light .bg-brand-500\/10,
+    html.light .bg-brand-500\/15,
+    html.light .bg-brand-500\/20,
+    html.light .bg-emerald-500\/10,
+    html.light .bg-emerald-500\/20 {
+      background-color: #ecfdf5 !important;
+      border-color: #a7f3d0 !important;
+      color: #047857 !important;
+    }
+    html.light .bg-cyan-500\/10,
+    html.light .bg-cyan-500\/20 {
+      background-color: #ecfeff !important;
+      border-color: #a5f3fc !important;
+      color: #0e7490 !important;
+    }
+    html.light .bg-amber-500\/10,
+    html.light .bg-amber-500\/20 {
+      background-color: #fffbeb !important;
+      border-color: #fde68a !important;
+      color: #b45309 !important;
+    }
+    html.light .bg-purple-500\/10,
+    html.light .bg-purple-500\/20 {
+      background-color: #faf5ff !important;
+      border-color: #e9d5ff !important;
+      color: #7e22ce !important;
+    }
+
+    /* Buttons */
+    html.light button.bg-slate-800,
+    html.light button.bg-slate-800\/80 {
+      background-color: #0f172a !important;
+      color: #ffffff !important;
+      border-color: #0f172a !important;
+    }
+    html.light button.bg-slate-800:hover,
+    html.light button.bg-slate-800\/80:hover {
+      background-color: #1e293b !important;
+    }
+
+    /* Modals & Inputs */
+    html.light [id$="Modal"] > div {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.2) !important;
+    }
+    html.light input,
+    html.light select,
+    html.light textarea {
+      background-color: #f8fafc !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+    html.light input::placeholder,
+    html.light textarea::placeholder {
+      color: #94a3b8 !important;
+    }
+
+    /* Range slider light track */
+    html.light input[type=range] {
+      background: #e2e8f0 !important;
+    }
+
+    /* Footer */
+    html.light footer {
+      background-color: #ffffff !important;
+      border-top-color: #e2e8f0 !important;
+    }
+    html.light footer * {
+      color: #475569 !important;
+    }
+    html.light footer strong {
+      color: #0f172a !important;
+    }
+
+    /* =========================================================================
+       CAMPUS SPATIAL DIGITAL TWIN (INTERACTIVE MAP & ENERGY FLOWS)
+       ========================================================================= */
+    .energy-flow-path {
+      stroke-dasharray: 6 5;
+      animation: energyFlow 1.4s linear infinite;
+    }
+    @keyframes energyFlow {
+      from { stroke-dashoffset: 22; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    .water-flow-path {
+      stroke-dasharray: 5 4;
+      animation: waterFlow 1.8s linear infinite;
+    }
+    @keyframes waterFlow {
+      from { stroke-dashoffset: 18; }
+      to { stroke-dashoffset: 0; }
+    }
+
+    .map-building-node {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .map-building-node:hover rect {
+      filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.6));
+      stroke: #34d399;
+      stroke-width: 2px;
+    }
+    .map-building-node.active-map-building rect {
+      filter: drop-shadow(0 0 14px rgba(6, 182, 212, 0.8));
+      stroke: #22d3ee;
+      stroke-width: 2.5px;
+    }
+
+    /* Holographic Eco-Passport Certificate Styling */
+    .passport-border {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(6, 182, 212, 0.25), rgba(168, 85, 247, 0.3), rgba(245, 158, 11, 0.2));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+    }
+    .passport-watermark {
+      background-image: radial-gradient(rgba(16, 185, 129, 0.08) 1.5px, transparent 1.5px);
+      background-size: 16px 16px;
+    }
+
+    /* Emergency Anomaly Pulsing Alert */
+    .crisis-active {
+      animation: emergencyPulse 1.2s ease-in-out infinite alternate !important;
+    }
+    @keyframes emergencyPulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+        border-color: rgba(239, 68, 68, 0.5);
+      }
+      100% {
+        box-shadow: 0 0 25px 4px rgba(239, 68, 68, 0.6);
+        border-color: rgba(239, 68, 68, 1);
+      }
+    }
+
+    /* =========================================================================
+       COLOR GRADING: 1. ATMOSPHERIC TIME-OF-DAY GRADING THEMES
+       ========================================================================= */
+    body {
+      transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ambient-glow {
+      transition: background 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+    }
+
+    /* Golden Hour Atmosphere */
+    [data-atmosphere="golden"] .ambient-glow-1 {
+      background: radial-gradient(circle, #d97706 0%, transparent 70%) !important;
+      opacity: 0.22 !important;
+    }
+    [data-atmosphere="golden"] .ambient-glow-2 {
+      background: radial-gradient(circle, #ea580c 0%, transparent 70%) !important;
+      opacity: 0.18 !important;
+    }
+    [data-atmosphere="golden"] .text-gradient-emerald {
+      background: linear-gradient(135deg, #fbbf24 0%, #f97316 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+    }
+
+    /* Emerald Dawn Atmosphere */
+    [data-atmosphere="dawn"] .ambient-glow-1 {
+      background: radial-gradient(circle, #0d9488 0%, transparent 70%) !important;
+      opacity: 0.2 !important;
+    }
+    [data-atmosphere="dawn"] .ambient-glow-2 {
+      background: radial-gradient(circle, #f43f5e 0%, transparent 70%) !important;
+      opacity: 0.16 !important;
+    }
+
+    /* Cyber Night Atmosphere */
+    [data-atmosphere="cyber"] body {
+      background-color: #030712 !important;
+    }
+    [data-atmosphere="cyber"] .ambient-glow-1 {
+      background: radial-gradient(circle, #7c3aed 0%, transparent 70%) !important;
+      opacity: 0.25 !important;
+    }
+    [data-atmosphere="cyber"] .ambient-glow-2 {
+      background: radial-gradient(circle, #06b6d4 0%, transparent 70%) !important;
+      opacity: 0.22 !important;
+    }
+    [data-atmosphere="cyber"] .text-gradient-emerald {
+      background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+    }
+
+    /* Overcast Mist Atmosphere */
+    [data-atmosphere="overcast"] .ambient-glow-1 {
+      background: radial-gradient(circle, #475569 0%, transparent 70%) !important;
+      opacity: 0.25 !important;
+    }
+    [data-atmosphere="overcast"] .ambient-glow-2 {
+      background: radial-gradient(circle, #334155 0%, transparent 70%) !important;
+      opacity: 0.2 !important;
+    }
+
+    /* =========================================================================
+       COLOR GRADING: 2. SPATIAL MAP DATA & THERMAL GRADING
+       ========================================================================= */
+    .map-building-node rect {
+      transition: fill 0.5s ease, stroke 0.5s ease, filter 0.5s ease;
+    }
+    .energy-flow-path {
+      transition: stroke 0.5s ease;
+    }
+
+    /* Dynamic Thermal Heatmap Legend Bar */
+    .thermal-gradient-bar {
+      background: linear-gradient(90deg, #10b981 0%, #06b6d4 30%, #fbbf24 60%, #f97316 80%, #ef4444 100%);
+    }
+    .carbon-gradient-bar {
+      background: linear-gradient(90deg, #10b981 0%, #34d399 25%, #f59e0b 60%, #dc2626 100%);
+    }
+
+    /* =========================================================================
+       COLOR GRADING: 3. PROFESSIONAL PHOTO EVIDENCE STUDIO
+       ========================================================================= */
+    /* Before / After Split Slider Container */
+    .split-viewer-container {
+      position: relative;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: none;
+      overflow: hidden;
+      border-radius: 1rem;
+      background: #000;
+    }
+
+    .split-divider-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #ffffff;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.8), 0 0 20px rgba(16, 185, 129, 0.5);
+      cursor: ew-resize;
+      z-index: 20;
+    }
+
+    .split-divider-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      cursor: ew-resize;
+      transition: transform 0.15s ease;
+    }
+    .split-divider-handle:hover {
+      transform: translate(-50%, -50%) scale(1.15);
+      border-color: #34d399;
+      box-shadow: 0 0 20px rgba(52, 211, 153, 0.8);
+    }
+
+    /* 3-Way Color Wheels */
+    .color-wheel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 140px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00
+      );
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8), 0 4px 15px rgba(0, 0, 0, 0.4);
+      cursor: crosshair;
+      margin: 0 auto;
+    }
+    .color-wheel-center {
+      position: absolute;
+      inset: 15%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(128, 128, 128, 0.9) 0%, rgba(128, 128, 128, 0.3) 70%, transparent 100%);
+      pointer-events: none;
+    }
+    .color-wheel-pointer {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      background: #0f172a;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.9);
+      transition: border-color 0.15s;
+    }
+
+    /* Mini Tone Curve Canvas */
+    .tone-curve-canvas {
+      width: 100%;
+      height: 130px;
+      background: rgba(10, 15, 26, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0.75rem;
+    }
+
+    /* Live Histogram Canvas */
+    .histogram-canvas {
+      width: 100%;
+      height: 70px;
+      background: rgba(10, 15, 26, 0.9);
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* =========================================================================
+       SIDEBAR & DEDICATED VIEWPORT LAYOUT SYSTEM
+       ========================================================================= */
+    #appSidebar {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), width 0.2s ease;
+    }
+    
+    @media (max-width: 1023px) {
+      #appSidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+        z-index: 50;
+      }
+      #appSidebar.sidebar-open {
+        transform: translateX(0);
+        box-shadow: 0 0 60px rgba(0, 0, 0, 0.95);
+      }
+    }
+
+    /* Fixed Full-Height Sidebar Frame on Desktop (Never Cuts Off or Leaves Voids) */
+    @media (min-width: 1024px) {
+      #appSidebar {
+        position: fixed !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        height: 100vh !important;
+        width: 16rem !important;
+        z-index: 40 !important;
+      }
+      .app-main-layout {
+        margin-left: 16rem !important;
+      }
+    }
+    @media (min-width: 1280px) {
+      #appSidebar {
+        width: 18rem !important;
+      }
+      .app-main-layout {
+        margin-left: 18rem !important;
+      }
+    }
+
+    /* Dark mode sidebar active navigation button */
+    .tab-button.sidebar-active {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.18), rgba(6, 182, 212, 0.08)) !important;
+      border: 1px solid rgba(16, 185, 129, 0.45) !important;
+      color: #34d399 !important;
+      font-weight: 700 !important;
+      box-shadow: inset 0 0 14px rgba(16, 185, 129, 0.12), 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+    }
+    .tab-button.sidebar-active i {
+      color: #10b981 !important;
+    }
+
+    /* Utility: Hide Scrollbar where horizontal scrolling is used smoothly */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Dedicated Viewport Scrollbar Styling - High Visibility & Sleek Emerald Glow */
+    #mainViewport {
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(52, 211, 153, 0.55) rgba(15, 23, 42, 0.7);
+    }
+    #mainViewport::-webkit-scrollbar {
+      width: 9px;
+    }
+    #mainViewport::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.75);
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    #mainViewport::-webkit-scrollbar-thumb {
+      background: rgba(52, 211, 153, 0.45);
+      border-radius: 9999px;
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.25);
+    }
+    #mainViewport::-webkit-scrollbar-thumb:hover {
+      background: rgba(16, 185, 129, 0.85);
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.6);
+    }
+
+    #appSidebar nav {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+    }
+    #appSidebar nav::-webkit-scrollbar {
+      width: 5px;
+    }
+    #appSidebar nav::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #appSidebar nav::-webkit-scrollbar-thumb {
+      background: rgba(148, 163, 184, 0.25);
+      border-radius: 9999px;
+    }
+    #appSidebar nav::-webkit-scrollbar-thumb:hover {
+      background: rgba(16, 185, 129, 0.45);
+    }
+
+    /* Light mode scrollbar enhancements */
+    html.light #mainViewport {
+      scrollbar-color: rgba(16, 185, 129, 0.55) rgba(226, 232, 240, 0.8);
+    }
+    html.light #mainViewport::-webkit-scrollbar-track {
+      background: rgba(226, 232, 240, 0.8);
+      border: 1px solid rgba(203, 213, 225, 0.6);
+    }
+    html.light #mainViewport::-webkit-scrollbar-thumb {
+      background: rgba(16, 185, 129, 0.55);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    /* Light mode adaptations for sidebar and headers */
+    html.light #appSidebar {
+      background: rgba(255, 255, 255, 0.96) !important;
+      border-right-color: #e2e8f0 !important;
+    }
+    /* Header & Topbar Light Mode Polish */
+    html.light header {
+      background: rgba(255, 255, 255, 0.95) !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    html.light header .bg-slate-900\/90,
+    html.light header .bg-slate-900\/80,
+    html.light header .bg-slate-900\/70,
+    html.light header .bg-slate-900\/60 {
+      background-color: #ffffff !important;
+      border-color: #e2e8f0 !important;
+      color: #0f172a !important;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    /* Hardware-level flex protection for header selectors */
+    #headerCountrySelector {
+      min-width: 90px;
+      max-width: 120px;
+    }
+    #headerDormSelector {
+      min-width: 110px;
+      max-width: 150px;
+    }
+    header select {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    html.light #headerCountrySelector {
+      color: #047857 !important;
+    }
+    html.light #headerCountrySelector option {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+
+    html.light #headerDormSelector {
+      color: #0f172a !important;
+    }
+    html.light #headerDormSelector option {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+
+    html.light #globalQuickSearch {
+      background-color: #f8fafc !important;
+      border-color: #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+    html.light #globalQuickSearch::placeholder {
+      color: #94a3b8 !important;
+    }
+
+    /* Telemetry pill in light mode */
+    html.light header .rounded-full.bg-slate-900\/70 {
+      background-color: #f8fafc !important;
+      border-color: #e2e8f0 !important;
+    }
+    html.light #navGridStatus {
+      color: #047857 !important;
+    }
+    html.light #navSolarIrradiance {
+      color: #0f172a !important;
+    }
+    html.light #navWeatherSummary {
+      color: #64748b !important;
+    }
+
+    /* Header action buttons in light mode */
+    html.light header button.text-slate-400 {
+      color: #475569 !important;
+    }
+    html.light header button.text-slate-400:hover {
+      color: #0f172a !important;
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+    }
+
+    /* Passport button in light mode */
+    html.light header button[title*="Eco-Passport"] {
+      background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+      border-color: #cbd5e1 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+    }
+    html.light #headerStudentName {
+      color: #0f172a !important;
+    }
+    html.light #userEcoPoints {
+      color: #047857 !important;
+    }
+
+    /* Dropdown panels in light mode */
+    html.light #simDropdown,
+    html.light #atmosphereDropdown {
+      background: rgba(255, 255, 255, 0.98) !important;
+      border-color: #e2e8f0 !important;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05) !important;
+    }
+    html.light #simDropdown button,
+    html.light #atmosphereDropdown button {
+      color: #1e293b !important;
+    }
+    html.light #simDropdown button:hover,
+    html.light #atmosphereDropdown button:hover {
+      background: #f1f5f9 !important;
+    }
+    html.light #simDropdown .text-white,
+    html.light #atmosphereDropdown .text-white {
+      color: #0f172a !important;
+    }
+    html.light .tab-button.sidebar-active {
+      background: linear-gradient(135deg, #ecfdf5, #f0fdfa) !important;
+      border-color: #a7f3d0 !important;
+      color: #047857 !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), inset 0 0 0 1px #a7f3d0 !important;
+    }
+    html.light .tab-button.sidebar-active i {
+      color: #059669 !important;
+    }
+
+    /* =========================================================================
+       LIGHT MODE CONTRAST OVERRIDES
+       ========================================================================= */
+
+    /* 1. Fix the top Live Dispatch banner text */
+    html.light .bg-slate-900,
+    html.light [id="tickerText"],
+    html.light .font-mono {
+      color: #0f172a !important; /* Force dark charcoal text */
+    }
+
+    html.light #tickerText {
+      color: #065f46 !important; /* Deep emerald for readable dispatch */
+      font-weight: 600 !important;
+    }
+
+    /* 2. Fix the Alex Rivers profile card in the sidebar */
+    html.light aside .bg-slate-900\/80,
+    html.light aside .bg-slate-950\/80,
+    html.light aside [class*="bg-slate-"] {
+      background-color: #f1f5f9 !important;
+      border-color: #cbd5e1 !important;
+    }
+
+    html.light aside p,
+    html.light aside span:not([class*="bg-"]) {
+      color: #1e293b !important; /* Dark legible text */
+    }
+
+    html.light aside .text-slate-400,
+    html.light aside .text-slate-500 {
+      color: #475569 !important;
+    }
+
+    /* 3. Fix the sidebar pill badges (Live, 6 New, Alerts) */
+    html.light aside .text-emerald-400 {
+      color: #047857 !important;
+      background-color: #d1fae5 !important;
+    }
+
+    html.light aside .text-right .text-emerald-400,
+    html.light aside .border-t .text-emerald-400 {
+      background-color: transparent !important;
+    }
+
+    html.light aside .text-amber-400,
+    html.light aside .text-amber-300 {
+      color: #b45309 !important;
+      background-color: #fef3c7 !important;
+    }
+
+    html.light aside .text-red-400,
+    html.light aside [class*="text-red"] {
+      color: #b91c1c !important;
+      background-color: #fee2e2 !important;
+    }
+
+    /* 4. Fix card subheaders and labels */
+    html.light .text-slate-400 {
+      color: #64748b !important;
+    }
+
+    html.light .text-slate-300 {
+      color: #334155 !important;
+    }
+
+    /* 5. Front Landing Gateway & Sample Login Portal in Light Mode */
+    html.light #frontLandingPage {
+      background: rgba(248, 250, 252, 0.98) !important;
+      color: #0f172a !important;
+    }
+    html.light #frontLandingPage header {
+      border-bottom-color: rgba(226, 232, 240, 0.8) !important;
+    }
+    html.light #frontLandingPage footer {
+      border-top-color: rgba(226, 232, 240, 0.8) !important;
+    }
+    html.light #frontLandingPage h1,
+    html.light #frontLandingPage h2,
+    html.light #frontLandingPage .font-black,
+    html.light #frontLandingPage .font-extrabold {
+      color: #0f172a !important;
+    }
+    html.light #frontLandingPage p,
+    html.light #frontLandingPage .text-slate-300 {
+      color: #334155 !important;
+    }
+    html.light #frontLandingPage .glass-panel {
+      background: rgba(255, 255, 255, 0.9) !important;
+      border-color: rgba(203, 213, 225, 0.8) !important;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08) !important;
+    }
+    html.light #frontLandingPage .glass-panel .text-white {
+      color: #0f172a !important;
+    }
+    html.light #frontLandingPage .glass-panel .text-slate-400 {
+      color: #64748b !important;
+    }
+    html.light #frontLandingPage button.bg-slate-900\/80,
+    html.light #frontLandingPage button.bg-slate-800\/80 {
+      background: #ffffff !important;
+      border-color: #cbd5e1 !important;
+    }
+    html.light #frontLandingPage button.bg-slate-900\/80:hover,
+    html.light #frontLandingPage button.bg-slate-800\/80:hover {
+      background: #f1f5f9 !important;
+      border-color: #94a3b8 !important;
+    }
+    html.light #frontLandingPage button.bg-slate-900\/80 .text-white,
+    html.light #frontLandingPage button.bg-slate-800\/80 span {
+      color: #0f172a !important;
+    }
+
+    /* =========================================================================
+       ACCESSIBILITY & INTERACTIVE POLISH (WCAG 2.1 AA COMPLIANCE)
+       ========================================================================= */
+    :focus-visible {
+      outline: 2px solid #10b981 !important;
+      outline-offset: 2px !important;
+    }
+
+    button:focus-visible, 
+    input:focus-visible, 
+    select:focus-visible, 
+    textarea:focus-visible {
+      outline: 2px solid #10b981 !important;
+      outline-offset: 2px !important;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25) !important;
+    }
+
+    html.light :focus-visible,
+    html.light button:focus-visible,
+    html.light input:focus-visible,
+    html.light select:focus-visible {
+      outline: 2px solid #059669 !important;
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.2) !important;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
